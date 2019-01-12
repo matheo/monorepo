@@ -57,6 +57,7 @@
     "@angular/language-service": "^7.0.0",
     "@nestjs/schematics": "5.11.2",
     "@nestjs/testing": "5.5.0",
+    "@ngrx/schematics": "^7.0.0",
     "@ngrx/store-devtools": "6.1.2",
     "@nrwl/builders": "7.3.0",
     "@nrwl/schematics": "7.3.0",
