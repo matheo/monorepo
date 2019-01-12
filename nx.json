@@ -9,10 +9,17 @@
   },
   "projects": {
     "web": {
-      "tags": ["frontend"]
+      "tags": [
+        "frontend"
+      ]
     },
     "web-e2e": {
       "tags": []
+    },
+    "server": {
+      "tags": [
+        "backend"
+      ]
     }
   }
 }
