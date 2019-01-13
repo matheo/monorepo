@@ -1,4 +1,4 @@
-@import '../../cdk/a11y/a11y';
+@import '~@angular/cdk/a11y';
 
 $mat-calendar-body-label-padding-start: 5% !default;
 // We don't want the label to jump around when we switch between month and year views, so we use
@@ -68,6 +68,7 @@ $mat-calendar-body-cell-content-size: 100% - $mat-calendar-body-cell-content-mar
 
 
 @include cdk-high-contrast {
+
   .mat-datepicker-popup:not(:empty),
   .mat-calendar-body-selected {
     outline: solid 1px;

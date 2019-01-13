@@ -16,45 +16,49 @@ import {
   ViewEncapsulation,
   NgZone,
   OnChanges,
-  SimpleChanges,
+  SimpleChanges
 } from '@angular/core';
-import {take} from 'rxjs/operators';
+import { take } from 'rxjs/operators';
 
 /**
  * Extra CSS classes that can be associated with a calendar cell.
  */
-export type MatCalendarCellCssClasses = string | string[] | Set<string> | {[key: string]: any};
+export type MatCalendarCellCssClasses =
+  | string
+  | string[]
+  | Set<string>
+  | { [key: string]: any };
 
 /**
  * An internal class that represents the data corresponding to a single calendar cell.
  * @docs-private
  */
 export class MatCalendarCell {
-  constructor(public value: number,
-              public displayValue: string,
-              public ariaLabel: string,
-              public enabled: boolean,
-              public cssClasses?: MatCalendarCellCssClasses) {}
+  constructor(
+    public value: number,
+    public displayValue: string,
+    public ariaLabel: string,
+    public enabled: boolean,
+    public cssClasses?: MatCalendarCellCssClasses
+  ) {}
 }
-
 
 /**
  * An internal component used to display calendar data in a table.
  * @docs-private
  */
 @Component({
-  moduleId: module.id,
   selector: '[mat-calendar-body]',
   templateUrl: 'calendar-body.html',
-  styleUrls: ['calendar-body.css'],
+  styleUrls: ['calendar-body.scss'],
   host: {
-    'class': 'mat-calendar-body',
-    'role': 'grid',
+    class: 'mat-calendar-body',
+    role: 'grid',
     'aria-readonly': 'true'
   },
   exportAs: 'matCalendarBody',
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MatCalendarBody implements OnChanges {
   /** The label for the table. (e.g. "Jan 2017"). */
@@ -85,7 +89,9 @@ export class MatCalendarBody implements OnChanges {
   @Input() cellAspectRatio = 1;
 
   /** Emits when a new value is selected. */
-  @Output() readonly selectedValueChange: EventEmitter<number> = new EventEmitter<number>();
+  @Output() readonly selectedValueChange: EventEmitter<
+    number
+  > = new EventEmitter<number>();
 
   /** The number of blank cells to put at the beginning for the first row. */
   _firstRowOffset: number;
@@ -96,7 +102,10 @@ export class MatCalendarBody implements OnChanges {
   /** Width of an individual cell. */
   _cellWidth: string;
 
-  constructor(private _elementRef: ElementRef<HTMLElement>, private _ngZone: NgZone) { }
+  constructor(
+    private _elementRef: ElementRef<HTMLElement>,
+    private _ngZone: NgZone
+  ) {}
 
   _cellClicked(cell: MatCalendarCell): void {
     if (cell.enabled) {
@@ -106,14 +115,15 @@ export class MatCalendarBody implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     const columnChanges = changes.numCols;
-    const {rows, numCols} = this;
+    const { rows, numCols } = this;
 
     if (changes.rows || columnChanges) {
-      this._firstRowOffset = rows && rows.length && rows[0].length ? numCols - rows[0].length : 0;
+      this._firstRowOffset =
+        rows && rows.length && rows[0].length ? numCols - rows[0].length : 0;
     }
 
     if (changes.cellAspectRatio || columnChanges || !this._cellPadding) {
-      this._cellPadding = `${50 * this.cellAspectRatio / numCols}%`;
+      this._cellPadding = `${(50 * this.cellAspectRatio) / numCols}%`;
     }
 
     if (columnChanges || !this._cellWidth) {
@@ -129,20 +139,24 @@ export class MatCalendarBody implements OnChanges {
       cellNumber -= this._firstRowOffset;
     }
 
-    return cellNumber == this.activeCell;
+    return cellNumber === this.activeCell;
   }
 
   /** Focuses the active cell after the microtask queue is empty. */
   _focusActiveCell() {
     this._ngZone.runOutsideAngular(() => {
-      this._ngZone.onStable.asObservable().pipe(take(1)).subscribe(() => {
-        const activeCell: HTMLElement | null =
-            this._elementRef.nativeElement.querySelector('.mat-calendar-body-active');
+      this._ngZone.onStable
+        .asObservable()
+        .pipe(take(1))
+        .subscribe(() => {
+          const activeCell: HTMLElement | null = this._elementRef.nativeElement.querySelector(
+            '.mat-calendar-body-active'
+          );
 
-        if (activeCell) {
-          activeCell.focus();
-        }
-      });
+          if (activeCell) {
+            activeCell.focus();
+          }
+        });
     });
   }
 }
