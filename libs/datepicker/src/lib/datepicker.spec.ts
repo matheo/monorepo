@@ -8,18 +8,18 @@ import {
   dispatchFakeEvent,
   dispatchKeyboardEvent,
   dispatchMouseEvent,
-} from '@angular/cdk/testing';
+} from '@matheo/testing';
 import {Component, FactoryProvider, Type, ValueProvider, ViewChild} from '@angular/core';
 import {ComponentFixture, fakeAsync, flush, inject, TestBed, tick} from '@angular/core/testing';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MAT_DATE_LOCALE, MatNativeDateModule, NativeDateModule} from '@angular/material/core';
 import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
-import {DEC, JAN, JUL, JUN, SEP} from '@angular/material/testing';
+import {DEC, JAN, JUL, JUN, SEP} from '@matheo/testing';
 import {By} from '@angular/platform-browser';
 import {BrowserDynamicTestingModule} from '@angular/platform-browser-dynamic/testing';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {Subject} from 'rxjs';
-import {MatInputModule} from '../input/index';
+import {MatInputModule} from '@angular/material';
 import {MatDatepicker} from './datepicker';
 import {MatDatepickerInput} from './datepicker-input';
 import {MatDatepickerToggle} from './datepicker-toggle';

@@ -9,11 +9,11 @@ import {
   RIGHT_ARROW,
   UP_ARROW,
 } from '@angular/cdk/keycodes';
-import {dispatchFakeEvent, dispatchKeyboardEvent} from '@angular/cdk/testing';
+import {dispatchFakeEvent, dispatchKeyboardEvent} from '@matheo/testing';
 import {Component, ViewChild} from '@angular/core';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {MatNativeDateModule} from '@angular/material/core';
-import {JAN} from '@angular/material/testing';
+import {JAN} from '@matheo/testing';
 import {By} from '@angular/platform-browser';
 import {MatCalendarBody} from './calendar-body';
 import {MatMultiYearView, yearsPerPage, yearsPerRow} from './multi-year-view';

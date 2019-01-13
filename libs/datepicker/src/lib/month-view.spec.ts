@@ -11,11 +11,11 @@ import {
   SPACE,
   UP_ARROW,
 } from '@angular/cdk/keycodes';
-import {dispatchFakeEvent, dispatchKeyboardEvent} from '@angular/cdk/testing';
+import {dispatchFakeEvent, dispatchKeyboardEvent} from '@matheo/testing';
 import {Component} from '@angular/core';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {MatNativeDateModule} from '@angular/material/core';
-import {DEC, FEB, JAN, MAR, NOV} from '@angular/material/testing';
+import {DEC, FEB, JAN, MAR, NOV} from '@matheo/testing';
 import {By} from '@angular/platform-browser';
 import {MatCalendarBody} from './calendar-body';
 import {MatMonthView} from './month-view';
