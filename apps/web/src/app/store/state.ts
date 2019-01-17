@@ -1,3 +1,5 @@
+import { RouterStateType } from './router';
+
 export interface AppState {
-  router: any;
+  router: RouterStateType;
 }
