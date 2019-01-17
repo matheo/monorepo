@@ -6,14 +6,12 @@ import {
   MetaReducer
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
-
-export interface AppState {
-
-}
+import { AppState } from './state';
 
 export const reducers: ActionReducerMap<AppState> = {
-
+  router: () => {}
 };
 
-
-export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<AppState>[] = !environment.production
+  ? []
+  : [];
