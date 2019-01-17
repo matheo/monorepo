@@ -23,6 +23,9 @@
     "datepicker": {
       "tags": ["material"]
     },
+    "layout": {
+      "tags": ["frontend"]
+    },
     "testing": {
       "tags": []
     }
