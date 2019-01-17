@@ -14,6 +14,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { effects, reducers, metaReducers, RouterSerializer } from './store';
 
 import { AppComponent } from './app.component';
+import { HomepageModule } from './homepage/homepage.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,8 @@ import { AppComponent } from './app.component';
       serializer: RouterSerializer,
       navigationActionTiming: NavigationActionTiming.PostActivation
     }),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    HomepageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
