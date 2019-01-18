@@ -1,0 +1,7 @@
+{
+  "beautify.ignore": [".html"],
+  "editor.formatOnSave": true,
+  "html.format.enable": false,
+  "tslint.autoFixOnSave": true,
+  "prettier.disableLanguages": ["html"]
+}
