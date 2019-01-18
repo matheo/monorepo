@@ -1,10 +1,18 @@
 import { Routes } from '@angular/router';
+import { LayoutComponent } from '@matheo/layout';
+
 import { HomepageComponent } from './homepage.component';
 
 export const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    component: HomepageComponent
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        component: HomepageComponent
+      }
+    ]
   }
 ];

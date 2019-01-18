@@ -13,8 +13,10 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { effects, reducers, metaReducers, RouterSerializer } from './store';
 
-import { AppComponent } from './app.component';
+import { LayoutModule } from '@matheo/layout';
 import { HomepageModule } from './homepage/homepage.module';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +31,7 @@ import { HomepageModule } from './homepage/homepage.module';
       navigationActionTiming: NavigationActionTiming.PostActivation
     }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    LayoutModule,
     HomepageModule
   ],
   providers: [],
