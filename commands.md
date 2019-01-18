@@ -4,7 +4,7 @@ Module
 ng generate @schematics/angular:module datepicker --project=web --module=app.module.ts --routing --lintFix
 
 Component
-ng generate @schematics/angular:component menu --project=layout --module=layout.module.ts --style=scss --skipTests --lintFix
+ng generate @schematics/angular:component datepicker/demo --project=web --module=datepicker/datepicker.module.ts --style=scss --skipTests --lintFix
 
 NGRX
 
