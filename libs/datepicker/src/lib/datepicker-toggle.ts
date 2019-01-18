@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {
   AfterContentInit,
   Attribute,
@@ -20,12 +20,13 @@ import {
   OnDestroy,
   SimpleChanges,
   ViewEncapsulation,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
-import { MatButton } from '@angular/material/button';
-import { merge, of as observableOf, Subscription } from 'rxjs';
-import { MatDatepicker } from './datepicker';
-import { MatDatepickerIntl } from './datepicker-intl';
+import {MatButton} from '@angular/material/button';
+import {merge, of as observableOf, Subscription} from 'rxjs';
+import {MatDatepicker} from './datepicker';
+import {MatDatepickerIntl} from './datepicker-intl';
+
 
 /** Can be used to override the icon of a `matDatepickerToggle`. */
 @Directive({
@@ -33,26 +34,26 @@ import { MatDatepickerIntl } from './datepicker-intl';
 })
 export class MatDatepickerToggleIcon {}
 
+
 @Component({
   selector: 'mat-datepicker-toggle',
   templateUrl: 'datepicker-toggle.html',
-  styleUrls: ['datepicker-toggle.scss'],
+  styleUrls: ['datepicker-toggle.css'],
   host: {
-    class: 'mat-datepicker-toggle',
+    'class': 'mat-datepicker-toggle',
     // Always set the tabindex to -1 so that it doesn't overlap with any custom tabindex the
     // consumer may have provided, while still being able to receive focus.
     '[attr.tabindex]': '-1',
     '[class.mat-datepicker-toggle-active]': 'datepicker && datepicker.opened',
     '[class.mat-accent]': 'datepicker && datepicker.color === "accent"',
     '[class.mat-warn]': 'datepicker && datepicker.color === "warn"',
-    '(focus)': '_button.focus()'
+    '(focus)': '_button.focus()',
   },
   exportAs: 'matDatepickerToggle',
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MatDatepickerToggle<D>
-  implements AfterContentInit, OnChanges, OnDestroy {
+export class MatDatepickerToggle<D> implements AfterContentInit, OnChanges, OnDestroy {
   private _stateChanges = Subscription.EMPTY;
 
   /** Datepicker instance that the button will toggle. */
@@ -64,9 +65,7 @@ export class MatDatepickerToggle<D>
   /** Whether the toggle button is disabled. */
   @Input()
   get disabled(): boolean {
-    return this._disabled === undefined
-      ? this.datepicker.disabled
-      : !!this._disabled;
+    return this._disabled === undefined ? this.datepicker.disabled : !!this._disabled;
   }
   set disabled(value: boolean) {
     this._disabled = coerceBooleanProperty(value);
@@ -85,11 +84,10 @@ export class MatDatepickerToggle<D>
   constructor(
     public _intl: MatDatepickerIntl,
     private _changeDetectorRef: ChangeDetectorRef,
-    @Attribute('tabindex') defaultTabIndex: string
-  ) {
+    @Attribute('tabindex') defaultTabIndex: string) {
+
     const parsedTabIndex = Number(defaultTabIndex);
-    this.tabIndex =
-      parsedTabIndex || parsedTabIndex === 0 ? parsedTabIndex : null;
+    this.tabIndex = (parsedTabIndex || parsedTabIndex === 0) ? parsedTabIndex : null;
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -114,16 +112,12 @@ export class MatDatepickerToggle<D>
   }
 
   private _watchStateChanges() {
-    const datepickerDisabled = this.datepicker
-      ? this.datepicker._disabledChange
-      : observableOf();
-    const inputDisabled =
-      this.datepicker && this.datepicker._datepickerInput
-        ? this.datepicker._datepickerInput._disabledChange
-        : observableOf();
-    const datepickerToggled = this.datepicker
-      ? merge(this.datepicker.openedStream, this.datepicker.closedStream)
-      : observableOf();
+    const datepickerDisabled = this.datepicker ? this.datepicker._disabledChange : observableOf();
+    const inputDisabled = this.datepicker && this.datepicker._datepickerInput ?
+        this.datepicker._datepickerInput._disabledChange : observableOf();
+    const datepickerToggled = this.datepicker ?
+        merge(this.datepicker.openedStream, this.datepicker.closedStream) :
+        observableOf();
 
     this._stateChanges.unsubscribe();
     this._stateChanges = merge(

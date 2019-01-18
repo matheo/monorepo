@@ -12,6 +12,7 @@
     "no-output-rename": false,
     "object-literal-key-quotes": [true, "consistent"],
     "prefer-const": false,
+    "radix": false,
     "triple-equals": false,
     "use-input-property-decorator": false,
     "use-host-property-decorator": false,
