@@ -1,3 +1,9 @@
+ANGULAR
+
+ng generate @schematics/angular:component menu --project=layout --module=layout.module.ts --style=scss --skipTests --lintFix
+
+NGRX
+
 Store Root
 ng generate @ngrx/schematics:store app --module=app.module.ts --no-flat --no-spec --root --stateInterface=AppState --statePath=store
 

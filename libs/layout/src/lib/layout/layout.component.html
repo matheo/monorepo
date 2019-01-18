@@ -1,13 +1,20 @@
-<mat-sidenav-container fxFlexFill>
+<mat-sidenav-container hasBackdrop="false" fxFlexFill>
 
-  <mat-sidenav #sidenav mode="over">
+  <mat-sidenav #sidenav mode="push">
+    <mat-toolbar>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon aria-label="Close Menu">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
     <!-- sidenav -->
+    <app-menu></app-menu>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <mat-toolbar role="heading">
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon aria-label="Navigation">menu</mat-icon>
+      <button mat-icon-button (click)="sidenav.toggle()" *ngIf="!sidenav.opened">
+        <mat-icon aria-label="Open Menu">menu</mat-icon>
       </button>
 
       <h1>Mateo Tibaquirá</h1>
