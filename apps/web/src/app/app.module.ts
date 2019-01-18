@@ -17,13 +17,14 @@ import { LayoutModule } from '@matheo/layout';
 import { HomepageModule } from './homepage/homepage.module';
 
 import { AppComponent } from './app.component';
+import { routes } from './app.routing';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserAnimationsModule,
     NxModule.forRoot(),
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(effects),
     StoreRouterConnectingModule.forRoot({
