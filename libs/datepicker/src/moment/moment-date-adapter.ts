@@ -7,7 +7,7 @@
  */
 
 import {Inject, Injectable, Optional, InjectionToken} from '@angular/core';
-import {DateAdapter, MAT_DATE_LOCALE} from '@angular/material/core';
+import {DateAdapter, MAT_DATE_LOCALE} from '@matheo/datepicker/core';
 
 // TODO(mmalerba): See if we can clean this up at some point.
 import * as momentNs from 'moment';

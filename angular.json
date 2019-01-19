@@ -210,7 +210,7 @@
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "libs/datepicker/tsconfig.lib.json",
-            "project": "libs/datepicker/ng-package.json"
+            "project": "libs/datepicker/src/ng-package.json"
           }
         },
         "test": {

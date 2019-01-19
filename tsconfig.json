@@ -15,6 +15,7 @@
     "paths": {
       "@matheo/api": ["libs/api/src/index.ts"],
       "@matheo/datepicker": ["libs/datepicker/src/index.ts"],
+      "@matheo/datepicker/*": ["libs/datepicker/src/*"],
       "@matheo/layout": ["libs/layout/src/index.ts"],
       "@matheo/testing": ["libs/testing/src/index.ts"]
     }

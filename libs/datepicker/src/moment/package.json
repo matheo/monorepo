@@ -1,0 +1,13 @@
+{
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts",
+      "umdModuleIds": {
+        "moment": "moment"
+      }
+    }
+  },
+  "peerDependencies": {
+    "moment": "*"
+  }
+}
