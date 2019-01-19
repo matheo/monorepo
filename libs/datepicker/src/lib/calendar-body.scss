@@ -1,4 +1,9 @@
-@import '~@angular/cdk/a11y';
+// @import '~@angular/cdk/a11y';
+@mixin cdk-high-contrast($target: active) {
+  @media (-ms-high-contrast: $target) {
+    @content;
+  }
+}
 
 $mat-calendar-body-label-padding-start: 5% !default;
 // We don't want the label to jump around when we switch between month and year views, so we use

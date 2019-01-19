@@ -38,7 +38,7 @@ export class MatDatepickerToggleIcon {}
 @Component({
   selector: 'mat-datepicker-toggle',
   templateUrl: 'datepicker-toggle.html',
-  styleUrls: ['datepicker-toggle.css'],
+  styleUrls: ['datepicker-toggle.scss'],
   host: {
     'class': 'mat-datepicker-toggle',
     // Always set the tabindex to -1 so that it doesn't overlap with any custom tabindex the
