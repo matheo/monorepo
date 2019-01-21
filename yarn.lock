@@ -6462,6 +6462,11 @@ lru-queue@0.1:
   dependencies:
     es5-ext "~0.10.2"
 
+luxon@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.10.0.tgz#335b55e2fed50e09f869aee828897a3f67c7044e"
+  integrity sha512-ry3GKh//v3isD6oJN5pFWmdh+3GiScwv9q8VgG6fZ2j1guGOol2vVVdo4GBAWCrcq5RHOqSeipqHBnOu/u024Q==
+
 magic-string@^0.25.0, magic-string@^0.25.1:
   version "0.25.1"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.1.tgz#b1c248b399cd7485da0fe7385c2fc7011843266e"
