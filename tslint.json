@@ -93,7 +93,10 @@
     "nx-enforce-module-boundaries": [
       true,
       {
-        "allow": [],
+        "allow": [
+          "@matheo/datepicker/luxon",
+          "@matheo/datepicker/moment"
+        ],
         "depConstraints": [
           { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
         ]
