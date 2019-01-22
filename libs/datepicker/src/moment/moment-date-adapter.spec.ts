@@ -447,19 +447,19 @@ describe('MomentDateAdapter with MAT_MOMENT_DATE_ADAPTER_OPTIONS override', () =
 
   describe('use UTC', () => {
     it('should create Moment date in UTC', () => {
-      expect(adapter.createDate(2017, JAN, 5).isUtc()).toBe(true);
+      expect(adapter.createDate(2017, JAN, 5).isUTC()).toBe(true);
     });
 
     it('should create today in UTC', () => {
-      expect(adapter.today().isUtc()).toBe(true);
+      expect(adapter.today().isUTC()).toBe(true);
     });
 
     it('should parse dates to UTC', () => {
-      expect(adapter.parse('1/2/2017', 'MM/DD/YYYY')!.isUtc()).toBe(true);
+      expect(adapter.parse('1/2/2017', 'MM/DD/YYYY')!.isUTC()).toBe(true);
     });
 
     it('should return UTC date when deserializing', () => {
-      expect(adapter.deserialize('1985-04-12T23:20:50.52Z')!.isUtc()).toBe(true);
+      expect(adapter.deserialize('1985-04-12T23:20:50.52Z')!.isUTC()).toBe(true);
     });
   });
 

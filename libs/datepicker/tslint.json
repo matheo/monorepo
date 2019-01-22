@@ -1,6 +1,7 @@
 {
   "extends": "../../tslint.json",
   "rules": {
+    "deprecation": false,
     "directive-selector": false,
     "directive-class-suffix": false,
     "component-selector": false,
@@ -10,6 +11,7 @@
     "member-ordering": false,
     "no-duplicate-imports": false,
     "no-non-null-assertion": false,
+    "no-use-before-declare": false,
     "no-input-rename": false,
     "no-output-rename": false,
     "object-literal-key-quotes": [true, "consistent"],
