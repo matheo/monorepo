@@ -12,7 +12,7 @@ import {
 import {dispatchFakeEvent, dispatchKeyboardEvent} from '@matheo/testing';
 import {Component, ViewChild} from '@angular/core';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {MatNativeDateModule} from '@angular/material/core';
+import {MatNativeDateModule} from '@matheo/datepicker/core';
 import {AUG, DEC, FEB, JAN, JUL, JUN, MAR, MAY, NOV, OCT, SEP} from '@matheo/testing';
 import {By} from '@angular/platform-browser';
 import {MatCalendarBody} from './calendar-body';

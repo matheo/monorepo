@@ -8,7 +8,7 @@ import {
 } from '@matheo/testing';
 import {Component, NgZone} from '@angular/core';
 import {async, ComponentFixture, inject, TestBed} from '@angular/core/testing';
-import {DateAdapter, MatNativeDateModule} from '@angular/material/core';
+import {DateAdapter, MatNativeDateModule} from '@matheo/datepicker/core';
 import {DEC, FEB, JAN, JUL, NOV} from '@matheo/testing';
 import {By} from '@angular/platform-browser';
 import {MatCalendar} from './calendar';

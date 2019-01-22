@@ -39,10 +39,10 @@ import {
 import {
   CanColor,
   CanColorCtor,
-  DateAdapter,
   mixinColor,
   ThemePalette,
 } from '@angular/material/core';
+import {DateAdapter} from '@matheo/datepicker/core';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {merge, Subject, Subscription} from 'rxjs';
 import {filter, take} from 'rxjs/operators';
